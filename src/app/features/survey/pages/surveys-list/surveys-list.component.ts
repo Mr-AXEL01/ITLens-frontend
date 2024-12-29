@@ -6,8 +6,7 @@ import {SurveyService} from '../../services/survey.service';
   selector: 'app-surveys-list',
   imports: [],
   standalone: true,
-  templateUrl: './surveys-list.component.html',
-  styleUrl: './surveys-list.component.css'
+  templateUrl: './surveys-list.component.html'
 })
 export class SurveysListComponent implements OnInit{
   surveys!: Survey[];
@@ -15,7 +14,7 @@ export class SurveysListComponent implements OnInit{
   surveyService = inject(SurveyService);
 
   ngOnInit() {
-    this.surveyService.getSurveys().subscribe({
+    this.surveyService.getAllSurveys().subscribe({
       next: (data) => {
         this.surveys = data;
         console.log(this.surveys);
