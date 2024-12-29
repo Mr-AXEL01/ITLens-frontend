@@ -8,3 +8,9 @@ export interface Survey {
   owner: Owner;
   surveyEditions: SurveyEdition[];
 }
+
+export interface SurveyRequest {
+  title: String;
+  description: string;
+  ownerId: number;
+}
