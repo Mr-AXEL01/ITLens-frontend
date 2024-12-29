@@ -1,1 +1,3 @@
-<p>surveys-list works!</p>
+@for (survey of surveys; track survey.id) {
+  <p>{{survey.title}}</p>
+}
