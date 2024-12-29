@@ -1,6 +1,6 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {Survey} from '../../models/survey.model';
-import {SurveyService} from '../../services/survey.service';
+import { Component, inject, OnInit } from '@angular/core';
+import { Survey } from '../../models/survey.model';
+import { SurveyService } from '../../services/survey.service';
 
 @Component({
   selector: 'app-surveys-list',
@@ -8,13 +8,13 @@ import {SurveyService} from '../../services/survey.service';
   standalone: true,
   templateUrl: './surveys-list.component.html'
 })
-export class SurveysListComponent implements OnInit{
+export class SurveysListComponent implements OnInit {
   surveys!: Survey[];
 
-  surveyService = inject(SurveyService);
+  constructor(private readonly surveyService: SurveyService) { }
 
   ngOnInit() {
-    this.surveyService.getAllSurveys().subscribe({
+    this.surveyService.getAll().subscribe({
       next: (data) => {
         this.surveys = data;
         console.log(this.surveys);

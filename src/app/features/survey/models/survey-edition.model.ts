@@ -1,4 +1,3 @@
-
 export interface SurveyEdition {
   id: string;
   creationDate: Date;

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {Survey} from '../models/survey.model';
-import {API_URL} from '../../../envirenment';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Survey, SurveyRequest } from '../models/survey.model';
+import { API_URL } from '../../../envirenment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +12,23 @@ export class SurveyService {
 
   constructor(private readonly http: HttpClient) { }
 
-  public getAllSurveys(): Observable<Survey[]> {
+  public getAll(): Observable<Survey[]> {
     return this.http.get<Survey[]>(this.path);
   }
 
-  public getSurveyById(id: number): Observable<Survey> {
+  public getById(id: number): Observable<Survey> {
     return this.http.get<Survey>(`${this.path}/${id}`);
+  }
+
+  public create(request: SurveyRequest): Observable<Survey> {
+    return this.http.post<Survey>(this.path, request);
+  }
+
+  public update(id: number, request: SurveyRequest): Observable<Survey> {
+    return this.http.put<Survey>(`${this.path}/${id}`, request);
+  }
+
+  public delete(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.path}/${id}`);
   }
 }
