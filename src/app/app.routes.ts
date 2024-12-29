@@ -3,19 +3,19 @@ import {AdminLayoutComponent} from './core/layout/admin-layout/admin-layout.comp
 
 export const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: AdminLayoutComponent,
     children: [
       {
-        path: 'surveys',
+        path: "surveys",
         loadComponent: () =>
-          import('./features/survey/pages/surveys-list/surveys-list.component')
+          import("./features/survey/pages/surveys-list/surveys-list.component")
             .then(c => c.SurveysListComponent)
       }
     ]
   },
   {
-    path: '**',
-    redirectTo: ''
+    path: "**",
+    redirectTo: ""
   }
 ];
