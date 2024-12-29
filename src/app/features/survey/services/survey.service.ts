@@ -2,16 +2,21 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Survey} from '../models/survey.model';
+import {API_URL} from '../../../envirenment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SurveyService {
+  private readonly path: string = API_URL + "/surveys";
 
-  private readonly path = "http://localhost:8080/api/v1/surveys"
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
-  public getSurveys(): Observable<Survey[]> {
+  public getAllSurveys(): Observable<Survey[]> {
     return this.http.get<Survey[]>(this.path);
+  }
+
+  public getSurveyById(id: number): Observable<Survey> {
+    return this.http.get<Survey>(`${this.path}/${id}`);
   }
 }
