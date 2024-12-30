@@ -1,0 +1,22 @@
+<div class="card bg-white shadow-md rounded p-4 mb-4">
+  <h2 class="text-lg font-bold text-gray-800">{{ survey.title }}</h2>
+  <p class="text-sm text-gray-600">{{ survey.description }}</p>
+  <p class="text-sm text-gray-500 mt-2">Owner: {{ survey.owner.name }}</p>
+
+  <ul class="mt-3 flex flex-wrap gap-2">
+    <li
+      *ngFor="let edition of survey.surveyEditions"
+      class="w-1/6 text-sm text-blue-600 border border-blue-950 p-2 rounded text-center" [routerLink]="['/survey-editions', edition.id]">
+      {{ edition.year }}
+    </li>
+  </ul>
+
+  <div class="flex justify-end mt-4 space-x-2">
+    <button (click)="onUpdate()" class="bg-blue-500 text-white p-1 rounded hover:bg-blue-600 transition">
+      <img src="https://cdn-icons-png.flaticon.com/512/2546/2546743.png " class="w-6">
+    </button>
+    <button (click)="onDelete()" class="bg-red-500 text-white p-1 rounded hover:bg-red-600 transition">
+      <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" class="w-6">
+    </button>
+  </div>
+</div>

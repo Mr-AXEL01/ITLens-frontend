@@ -1,0 +1,41 @@
+<div class="modal-overlay absolute top-[30%] right-[30%] w-[40%] bg-neutral-700 p-6 rounded">
+  <div class="modal-content">
+    <h2 class="text-xl font-bold mb-4">{{ title }}</h2>
+
+    <div class="form-group mb-4">
+      <label for="title" class="block font-medium">Title</label>
+      <input
+        type="text"
+        id="title"
+        [(ngModel)]="data.title"
+        class="border rounded w-full px-3 py-2"
+        placeholder="Enter title"
+      />
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="description" class="block font-medium">Description</label>
+      <textarea
+        id="description"
+        [(ngModel)]="data.description"
+        class="border rounded w-full px-3 py-2"
+        placeholder="Enter description"
+      ></textarea>
+    </div>
+
+    <div class="flex justify-end gap-2">
+      <button
+        class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+        (click)="onClose()"
+      >
+        Cancel
+      </button>
+      <button
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        (click)="onSave()"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</div>
