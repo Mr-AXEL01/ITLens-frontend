@@ -16,7 +16,7 @@ export class SurveyService {
     return this.http.get<Survey[]>(this.path);
   }
 
-  public getById(id: number): Observable<Survey> {
+  public getById(id: string): Observable<Survey> {
     return this.http.get<Survey>(`${this.path}/${id}`);
   }
 
@@ -24,11 +24,11 @@ export class SurveyService {
     return this.http.post<Survey>(this.path, request);
   }
 
-  public update(id: number, request: SurveyRequest): Observable<Survey> {
+  public update(id: string, request: SurveyRequest): Observable<Survey> {
     return this.http.put<Survey>(`${this.path}/${id}`, request);
   }
 
-  public delete(id: number): Observable<void> {
+  public delete(id: string): Observable<void> {
     return this.http.delete<void>(`${this.path}/${id}`);
   }
 }
