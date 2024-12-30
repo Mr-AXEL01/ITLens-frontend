@@ -12,5 +12,5 @@ export interface Survey {
 export interface SurveyRequest {
   title: String;
   description: string;
-  ownerId: number;
+  ownerId: string;
 }
