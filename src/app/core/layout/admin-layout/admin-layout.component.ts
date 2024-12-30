@@ -13,7 +13,7 @@ import {AdminLayoutFooterComponent} from '../../components/admin-layout-footer/a
   standalone: true,
   template: `
     <app-admin-layout-header></app-admin-layout-header>
-    <main class="min-h-[29.4rem] bg-gray-100 p-6">
+    <main class="min-h-[80vh] bg-gray-100 p-6">
       <router-outlet></router-outlet>
     </main>
     <app-admin-layout-footer></app-admin-layout-footer>
