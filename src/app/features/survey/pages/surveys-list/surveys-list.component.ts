@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Survey} from '../../models/survey.model';
-import {SurveyService} from '../../services/survey.service';
+import {SurveyService} from '../../survey.service';
 import {SurveyItemComponent} from '../../components/survey-item/survey-item.component';
 import {NgForOf, NgIf} from '@angular/common';
 import {ModalFormComponent} from '../../components/modal-form/modal-form.component';
