@@ -24,4 +24,8 @@ export class SurveyEditionService {
     return this.http.post<SurveyEdition>(this.path, request);
   }
 
+  public update(id: string, request: SurveyEditionRequest): Observable<SurveyEdition> {
+    return this.http.put<SurveyEdition>(`${this.path}/${id}`, request);
+  }
+
 }
