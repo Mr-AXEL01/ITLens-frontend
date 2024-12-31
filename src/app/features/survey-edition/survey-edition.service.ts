@@ -28,4 +28,7 @@ export class SurveyEditionService {
     return this.http.put<SurveyEdition>(`${this.path}/${id}`, request);
   }
 
+  public delete(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.path}/${id}`);
+  }
 }
