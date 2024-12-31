@@ -15,4 +15,8 @@ export class SurveyEditionService {
   public getAll(): Observable<SurveyEdition[]> {
     return this.http.get<SurveyEdition[]>(this.path);
   }
+
+  public getById(id: string): Observable<SurveyEdition> {
+    return this.http.get<SurveyEdition>(`${this.path}/${id}`);
+  }
 }
