@@ -11,7 +11,13 @@ export const routes: Routes = [
         loadComponent: () =>
           import("./features/survey/pages/surveys-list/surveys-list.component")
             .then(c => c.SurveysListComponent)
-      }
+      },
+      {
+        path: "survey_editions/:id",
+        loadComponent: () =>
+          import("./features/survey-edition/pages/survey-detail/survey-detail.component")
+            .then(c => c.SurveyDetailComponent)
+      },
     ]
   },
   {
