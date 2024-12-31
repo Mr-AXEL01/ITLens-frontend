@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {API_URL} from '../../envirenment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {SurveyEdition} from './survey-edition.model';
+import {SurveyEdition, SurveyEditionRequest} from './survey-edition.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,4 +19,9 @@ export class SurveyEditionService {
   public getById(id: string): Observable<SurveyEdition> {
     return this.http.get<SurveyEdition>(`${this.path}/${id}`);
   }
+
+  public create(request: SurveyEditionRequest): Observable<SurveyEdition> {
+    return this.http.post<SurveyEdition>(this.path, request);
+  }
+
 }
