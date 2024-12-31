@@ -1,5 +1,5 @@
 import {Owner} from './owner.model';
-import {SurveyEdition} from './survey-edition.model';
+import {SurveyEdition} from '../../survey-edition/survey-edition.model';
 
 export interface Survey {
   id: string;
