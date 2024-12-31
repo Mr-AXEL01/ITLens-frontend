@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Survey, SurveyRequest } from '../models/survey.model';
-import { API_URL } from '../../../envirenment';
+import { Survey, SurveyRequest } from './models/survey.model';
+import { API_URL } from '../../envirenment';
 
 @Injectable({
   providedIn: 'root'
