@@ -16,5 +16,7 @@ export class ChapterService {
     return this.http.get<Chapter[]>(this.path);
   }
 
-
+  public getById(id: string): Observable<Chapter> {
+    return this.http.get<Chapter>(`${this.path}/${id}`);
+  }
 }
