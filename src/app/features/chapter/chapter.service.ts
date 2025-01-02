@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {API_URL} from '../../envirenment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Chapter} from './chapter.model';
+import {Chapter, ChapterRequest} from './chapter.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,4 +19,10 @@ export class ChapterService {
   public getById(id: string): Observable<Chapter> {
     return this.http.get<Chapter>(`${this.path}/${id}`);
   }
+
+  public create(request: ChapterRequest): Observable<Chapter> {
+    return this.http.post<Chapter>(this.path, request);
+  }
+
+
 }
