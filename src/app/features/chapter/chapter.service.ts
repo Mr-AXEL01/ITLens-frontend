@@ -28,5 +28,7 @@ export class ChapterService {
     return this.http.put<Chapter>(`${this.path}/${id}`, request);
   }
 
-
+  public delete(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.path}/${id}`);
+  }
 }
