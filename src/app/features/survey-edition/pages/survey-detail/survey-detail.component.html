@@ -3,7 +3,7 @@
   <div class="w-1/5 p-4 bg-gray-200">
     <h3 class="font-bold text-lg">Chapters</h3>
     <ul>
-      <li @For="let chapter of surveyEdition?.chapters">
+      <li *ngFor="let chapter of surveyEdition?.chapters">
         <button class="w-full text-left" (click)="selectChapter(chapter)">
           {{ chapter.name }}
         </button>
@@ -14,7 +14,7 @@
   <!-- Content Area for Questions and Answers -->
   <div class="w-4/5 p-4">
     <h2 class="text-xl font-bold mb-4">{{ selectedChapter?.name || 'Select a Chapter' }}</h2>
-    <div @If="selectedChapter">
+    <div *ngIf="selectedChapter">
       <!-- Questions Table -->
       <h3 class="text-lg font-semibold">Questions</h3>
       <table class="table-auto w-full border">
@@ -26,7 +26,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr @For="let question of selectedChapter.questions">
+        <tr *ngFor="let question of selectedChapter.questions">
           <td>{{ question.text }}</td>
           <td>{{ question.type }}</td>
           <td>
@@ -46,7 +46,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *@For="let answer of selectedQuestion.answers">
+        <tr *ngFor="let answer of selectedQuestion.answers">
           <td>{{ answer.text }}</td>
           <td>{{ answer.respondent }}</td>
         </tr>
