@@ -24,5 +24,9 @@ export class ChapterService {
     return this.http.post<Chapter>(this.path, request);
   }
 
+  public update(id: string, request: ChapterRequest): Observable<Chapter> {
+    return this.http.put<Chapter>(`${this.path}/${id}`, request);
+  }
+
 
 }
