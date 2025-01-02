@@ -9,6 +9,12 @@ export interface Chapter {
   questions: Question[];
 }
 
+export interface ChapterRequest {
+  title: string;
+  surveyEditionId: string;
+  chapterId: string;
+}
+
 export interface Question {
 
 }
