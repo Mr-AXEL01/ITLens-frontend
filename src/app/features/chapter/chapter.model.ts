@@ -15,6 +15,12 @@ export interface ChapterRequest {
   chapterId: string;
 }
 
+export interface EmbeddedChapter {
+  id: string;
+  title: string;
+  subChapters: EmbeddedChapter[];
+}
+
 export interface Question {
 
 }
