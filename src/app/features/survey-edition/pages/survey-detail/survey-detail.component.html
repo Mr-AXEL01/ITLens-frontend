@@ -1,21 +1,37 @@
 <div class="flex">
-  <!-- Sidebar for Chapters/Subchapters -->
   <div class="w-1/5 p-4 bg-gray-200">
     <h3 class="font-bold text-lg">Chapters</h3>
     <ul>
-      <li *ngFor="let chapter of surveyEdition?.chapters">
-        <button class="w-full text-left" (click)="selectChapter(chapter)">
-          {{ chapter.name }}
+      <li *ngFor="let chapter of rootChapters" class="my-2">
+        <button
+          class="bg-amber-500 text-white text-[.85rem] rounded flex justify-center items-center px-2 py-[1px]"
+        >
+          {{ chapter.title }}
         </button>
+        <ul *ngIf="chapter.subChapters?.length" class="ml-7">
+          <li *ngFor="let subChapter of chapter.subChapters">
+            <button
+              class="bg-amber-300 text-white text-[.85rem] rounded flex justify-center items-center px-2 m-1"
+              (click)="selectChapter(subChapter)"
+            >
+              {{ subChapter.title }}
+            </button>
+          </li>
+        </ul>
+      </li>
+      <li *ngIf="!rootChapters.length">
+        <em>No chapters available</em>
       </li>
     </ul>
   </div>
 
-  <!-- Content Area for Questions and Answers -->
+
   <div class="w-4/5 p-4">
-    <h2 class="text-xl font-bold mb-4">{{ selectedChapter?.name || 'Select a Chapter' }}</h2>
+    <h2 class="text-xl font-bold mb-4">
+      {{ selectedChapter?.title || 'Select a Subchapter' }}
+    </h2>
+
     <div *ngIf="selectedChapter">
-      <!-- Questions Table -->
       <h3 class="text-lg font-semibold">Questions</h3>
       <table class="table-auto w-full border">
         <thead>
@@ -28,7 +44,7 @@
         <tbody>
         <tr *ngFor="let question of selectedChapter.questions">
           <td>{{ question.text }}</td>
-          <td>{{ question.type }}</td>
+          <td>{{ question.questionType }}</td>
           <td>
             <button (click)="selectQuestion(question)">View Answers</button>
           </td>
@@ -36,19 +52,18 @@
         </tbody>
       </table>
 
-      <!-- Answers Table -->
       <h3 class="text-lg font-semibold mt-4">Answers</h3>
       <table class="table-auto w-full border" *ngIf="selectedQuestion">
         <thead>
         <tr>
           <th>Answer</th>
-          <th>Respondent</th>
+          <th>Selection Count</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let answer of selectedQuestion.answers">
           <td>{{ answer.text }}</td>
-          <td>{{ answer.respondent }}</td>
+          <td>{{ answer.selectionCount }}</td>
         </tr>
         </tbody>
       </table>
