@@ -2,10 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {SurveyEdition} from '../../survey-edition.model';
 import {SurveyEditionService} from '../../survey-edition.service';
 import {ActivatedRoute} from '@angular/router';
-import {Chapter, EmbeddedChapter, Question} from '../../../chapter/chapter.model';
+import {Chapter, EmbeddedChapter} from '../../../chapter/chapter.model';
 import {NgClass, NgForOf, NgIf} from '@angular/common';
 import {ChapterService} from '../../../chapter/chapter.service';
 import {forkJoin} from "rxjs";
+import {Question} from '../../../question/question.model';
 
 @Component({
   selector: 'app-survey-detail',
