@@ -1,5 +1,5 @@
 import {Survey} from '../survey/models/survey.model';
-import {EmbeddedChapter} from '../chapter/chapter.model';
+import {EmbeddedChapter} from "../chapter/chapter.model";
 
 export interface SurveyEdition {
   id: string;
