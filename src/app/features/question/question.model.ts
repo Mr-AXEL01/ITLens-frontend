@@ -21,6 +21,13 @@ export interface EmbeddedQuestion {
   answerCount: number;
 }
 
+export interface QuestionRequest {
+  text: string;
+  questionType: QuestionType;
+  chapterId: string;
+  answers: AnswerRequest[];
+}
+
 export interface AnswerRequest {
   text: string;
 }
