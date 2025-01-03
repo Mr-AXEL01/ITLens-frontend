@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {API_URL} from '../../envirenment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Question} from './question.model';
+import {Question, QuestionRequest} from './question.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +20,8 @@ export class QuestionService {
     return this.http.get<Question>(`${this.path}/${id}`);
   }
 
+  public create(request: QuestionRequest): Observable<Question> {
+    return this.http.post<Question>(this.path, request);
+  }
 
 }
