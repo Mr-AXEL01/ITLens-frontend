@@ -21,6 +21,10 @@ export interface EmbeddedQuestion {
   answerCount: number;
 }
 
+export interface AnswerRequest {
+  text: string;
+}
+
 export interface EmbeddedAnswer {
   id: string;
   text: string;
