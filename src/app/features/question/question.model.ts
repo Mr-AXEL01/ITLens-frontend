@@ -14,6 +14,13 @@ export enum QuestionType {
   MULTIPLE_CHOICE = "MULTIPLE_CHOICE"
 }
 
+export interface EmbeddedQuestion {
+  id: string;
+  text: string;
+  questionType: QuestionType;
+  answerCount: number;
+}
+
 export interface EmbeddedAnswer {
   id: string;
   text: string;
