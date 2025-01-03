@@ -1,4 +1,5 @@
 import {SurveyEdition} from '../survey-edition/survey-edition.model';
+import {EmbeddedQuestion} from '../question/question.model';
 
 export interface Chapter {
   id: string;
@@ -6,7 +7,7 @@ export interface Chapter {
   parentChapter: Chapter;
   subChapters: Chapter[];
   surveyEdition: SurveyEdition;
-  questions: Question[];
+  questions: EmbeddedQuestion[];
 }
 
 export interface ChapterRequest {
@@ -21,22 +22,4 @@ export interface EmbeddedChapter {
   subChapters: EmbeddedChapter[];
 }
 
-export interface Question {
-  id: string;
-  text: string;
-  questionType: QuestionType;
-  answerCount: number;
-  chapter: EmbeddedChapter;
-  answers: EmbeddedAnswer[];
-}
 
-export enum QuestionType {
-  SINGLE_CHOICE = "SINGLE_CHOICE",
-  MULTIPLE_CHOICE = "MULTIPLE_CHOICE"
-}
-
-export interface EmbeddedAnswer {
-  id: string;
-  text: string;
-  selectionCount: number;
-}
