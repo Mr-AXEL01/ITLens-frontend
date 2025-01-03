@@ -28,5 +28,7 @@ export class QuestionService {
     return this.http.put<Question>(`${this.path}/${id}`, request);
   }
 
-
+  public delete(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.path}/${id}`);
+  }
 }
