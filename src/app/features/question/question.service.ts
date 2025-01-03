@@ -24,4 +24,9 @@ export class QuestionService {
     return this.http.post<Question>(this.path, request);
   }
 
+  public update(id: string, request: QuestionRequest): Observable<Question> {
+    return this.http.put<Question>(`${this.path}/${id}`, request);
+  }
+
+
 }
