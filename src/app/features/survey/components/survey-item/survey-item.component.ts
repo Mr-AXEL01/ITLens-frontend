@@ -19,8 +19,6 @@ export class SurveyItemComponent {
 
   onUpdate(): void {
     const updatedSurvey = { ...this.survey };
-    // updatedSurvey.title = prompt('Enter new title:', this.survey.title) || this.survey.title;
-    // updatedSurvey.description = prompt('Enter new description:', this.survey.description) || this.survey.description;
     this.updateSurvey.emit(updatedSurvey);
   }
 
