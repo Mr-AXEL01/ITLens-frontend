@@ -1,5 +1,5 @@
 import {SurveyEdition} from '../survey-edition/survey-edition.model';
-import {EmbeddedQuestion} from '../question/question.model';
+import {Question} from '../question/question.model';
 
 export interface Chapter {
   id: string;
@@ -7,7 +7,7 @@ export interface Chapter {
   parentChapter: Chapter;
   subChapters: Chapter[];
   surveyEdition: SurveyEdition;
-  questions: EmbeddedQuestion[];
+  questions: Question[];
 }
 
 export interface ChapterRequest {
@@ -16,10 +16,5 @@ export interface ChapterRequest {
   chapterId: string;
 }
 
-export interface EmbeddedChapter {
-  id: string;
-  title: string;
-  subChapters: EmbeddedChapter[];
-}
 
 
