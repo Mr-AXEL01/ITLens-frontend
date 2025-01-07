@@ -1,5 +1,5 @@
 import {Survey} from '../survey/models/survey.model';
-import {EmbeddedChapter} from "../chapter/chapter.model";
+import {Chapter} from "../chapter/chapter.model";
 
 export interface SurveyEdition {
   id: string;
@@ -7,7 +7,7 @@ export interface SurveyEdition {
   startDate: Date;
   year: number;
   survey: Survey;
-  chapters: EmbeddedChapter[];
+  chapters: Chapter[];
 }
 
 export interface SurveyEditionRequest {
