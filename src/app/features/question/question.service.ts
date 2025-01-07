@@ -31,4 +31,8 @@ export class QuestionService {
   public delete(id: string): Observable<void> {
     return this.http.delete<void>(`${this.path}/${id}`);
   }
+
+  getByChapterId(chapterId: string): Observable<Question[]> {
+    return this.http.get<Question[]>(`${this.path}/chapter/${chapterId}`);
+  }
 }
